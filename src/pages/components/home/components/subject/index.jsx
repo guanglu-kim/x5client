@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Button, Row, Col } from 'antd';
+import { Button } from 'antd';
+import { history } from 'umi';
 import img from '@/images/test.jpg';
 
 export default function Page() {
@@ -40,13 +41,175 @@ export default function Page() {
           },
         ],
       },
+      {
+        title: `热门推荐`,
+        list: [
+          {
+            img: img,
+            title: `闺蜜的姐妹`,
+            desc: `更新到26话`,
+          },
+          {
+            img: img,
+            title: `闺蜜的姐妹`,
+            desc: `更新到26话`,
+          },
+          {
+            img: img,
+            title: `闺蜜的姐妹`,
+            desc: `更新到26话`,
+          },
+          {
+            img: img,
+            title: `闺蜜的姐妹`,
+            desc: `更新到26话`,
+          },
+          {
+            img: img,
+            title: `闺蜜的姐妹`,
+            desc: `更新到26话`,
+          },
+          {
+            img: img,
+            title: `闺蜜的姐妹`,
+            desc: `更新到26话`,
+          },
+        ],
+      },
+      {
+        title: `新品上架`,
+        list: [
+          {
+            img: img,
+            title: `闺蜜的姐妹`,
+            desc: `更新到26话`,
+          },
+          {
+            img: img,
+            title: `闺蜜的姐妹`,
+            desc: `更新到26话`,
+          },
+          {
+            img: img,
+            title: `闺蜜的姐妹`,
+            desc: `更新到26话`,
+          },
+          {
+            img: img,
+            title: `闺蜜的姐妹`,
+            desc: `更新到26话`,
+          },
+          {
+            img: img,
+            title: `闺蜜的姐妹`,
+            desc: `更新到26话`,
+          },
+          {
+            img: img,
+            title: `闺蜜的姐妹`,
+            desc: `更新到26话`,
+          },
+        ],
+      },
+      {
+        title: `经典必看`,
+        list: [
+          {
+            img: img,
+            title: `闺蜜的姐妹`,
+            desc: `更新到26话`,
+          },
+          {
+            img: img,
+            title: `闺蜜的姐妹`,
+            desc: `更新到26话`,
+          },
+          {
+            img: img,
+            title: `闺蜜的姐妹`,
+            desc: `更新到26话`,
+          },
+          {
+            img: img,
+            title: `闺蜜的姐妹`,
+            desc: `更新到26话`,
+          },
+          {
+            img: img,
+            title: `闺蜜的姐妹`,
+            desc: `更新到26话`,
+          },
+          {
+            img: img,
+            title: `闺蜜的姐妹`,
+            desc: `更新到26话`,
+          },
+        ],
+      },
+      {
+        title: `猜你喜欢`,
+        list: [
+          {
+            img: img,
+            title: `闺蜜的姐妹`,
+            desc: `更新到26话`,
+          },
+          {
+            img: img,
+            title: `闺蜜的姐妹`,
+            desc: `更新到26话`,
+          },
+          {
+            img: img,
+            title: `闺蜜的姐妹`,
+            desc: `更新到26话`,
+          },
+          {
+            img: img,
+            title: `闺蜜的姐妹`,
+            desc: `更新到26话`,
+          },
+          {
+            img: img,
+            title: `闺蜜的姐妹`,
+            desc: `更新到26话`,
+          },
+          {
+            img: img,
+            title: `闺蜜的姐妹`,
+            desc: `更新到26话`,
+          },
+        ],
+      },
     ],
   });
+
+  // components
+  function Content(props) {
+    console.log(props);
+    const { item } = props;
+    return (
+      <div
+        onClick={() => {
+          history.push(`/detail/1`);
+        }}
+      >
+        <img src={item.img} style={{ width: `110px`, padding: 5 }} />
+        <div style={{ paddingLeft: 5 }}>{item.title}</div>
+        <div style={{ fontWeight: 100, fontSize: 12, paddingLeft: 5 }}>
+          {item.desc}
+        </div>
+      </div>
+    );
+  }
   return (
-    <div style={{ backgroundColor: `#fff` }}>
+    <div>
       {state.subject.map((item, key) => {
         return (
-          <div key={key}>
+          <div
+            key={key}
+            style={{ marginBottom: 5, background: `#fff`, paddingBottom: 5 }}
+          >
             <div style={{ display: `flex`, justifyContent: `space-between` }}>
               <div
                 style={{
@@ -59,73 +222,16 @@ export default function Page() {
               </div>
               <Button type="text">更多</Button>
             </div>
-            <Row>
-              <Col
-                span={8}
-                style={{ display: `flex`, flexDirection: `column` }}
-              >
-                <img
-                  src={item.list[0].img}
-                  style={{ width: `110px`, padding: 5 }}
-                />
-                <div style={{ paddingLeft: 5 }}>{item.list[0].title}</div>
-                <div style={{ fontWeight: 100, fontSize: 12, paddingLeft: 5 }}>
-                  {item.list[0].desc}
-                </div>
-              </Col>
-              <Col
-                span={8}
-                style={{ display: `flex`, flexDirection: `column` }}
-              >
-                <img
-                  src={item.list[0].img}
-                  style={{ width: `110px`, padding: 5 }}
-                />
-                {item.list[1].title}
-              </Col>
-              <Col
-                span={8}
-                style={{ display: `flex`, flexDirection: `column` }}
-              >
-                <img
-                  src={item.list[0].img}
-                  style={{ width: `110px`, padding: 5 }}
-                />
-                {item.list[2].title}
-              </Col>
-            </Row>
-            <Row>
-              <Col
-                span={8}
-                style={{ display: `flex`, flexDirection: `column` }}
-              >
-                <img
-                  src={item.list[0].img}
-                  style={{ width: `110px`, padding: 5 }}
-                />
-                {item.list[3].title}
-              </Col>
-              <Col
-                span={8}
-                style={{ display: `flex`, flexDirection: `column` }}
-              >
-                <img
-                  src={item.list[0].img}
-                  style={{ width: `110px`, padding: 5 }}
-                />
-                {item.list[4].title}
-              </Col>
-              <Col
-                span={8}
-                style={{ display: `flex`, flexDirection: `column` }}
-              >
-                <img
-                  src={item.list[0].img}
-                  style={{ width: `110px`, padding: 5 }}
-                />
-                {item.list[5].title}
-              </Col>
-            </Row>
+            <div style={{ display: `flex`, justifyContent: `space-around` }}>
+              <Content {...{ item: item.list[0] }} />
+              <Content {...{ item: item.list[1] }} />
+              <Content {...{ item: item.list[2] }} />
+            </div>
+            <div style={{ display: `flex`, justifyContent: `space-around` }}>
+              <Content {...{ item: item.list[3] }} />
+              <Content {...{ item: item.list[4] }} />
+              <Content {...{ item: item.list[5] }} />
+            </div>
           </div>
         );
       })}

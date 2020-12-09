@@ -27,7 +27,7 @@ export default () => {
   }
   return (
     <div className={styles.main}>
-      <div style={{ flex: 1 }}>
+      <div style={{ flex: 1, overflow: `auto` }}>
         <Content />
       </div>
 
