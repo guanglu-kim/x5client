@@ -186,7 +186,6 @@ export default function Page() {
 
   // components
   function Content(props) {
-    console.log(props);
     const { item } = props;
     return (
       <div
